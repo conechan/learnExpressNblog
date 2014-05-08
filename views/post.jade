@@ -1,0 +1,23 @@
+//
+   Created by charliechen on 14-3-18.
+
+extends layout
+
+block content
+  form(method="post")
+    p
+      label 标题
+    p
+      input(type="text", name="title")
+    p
+      label 标签
+    p
+      input(type="text", name="tag1")
+      input(type="text", name="tag2")
+      input(type="text", name="tag3")
+    p
+      label 正文
+    p
+      textarea(name="post", rows="20", cols="60")
+    p
+      input(type="submit", value="发表")

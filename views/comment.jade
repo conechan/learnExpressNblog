@@ -1,0 +1,34 @@
+//
+   Created by charliechen on 14-3-19.
+if post.comments
+  for comment in post.comments
+    div(style="padding-left:4em")
+      p
+        img.l_head(src="#{comment.head}")
+        a(href="#{comment.website}") #{comment.name}
+        span.info 回复于 #{comment.time}
+      p !{comment.content}
+
+form(method="post")
+  if user
+    p
+      label 姓名：
+      input(type="text", name="name", value="#{user.name}")
+    p
+      label 邮箱：
+      input(type="text", name="email", value="#{user.email}")
+    p
+      label 网址：
+      input(type="text", name="website", value="#{user.name}")
+  else
+    p
+      label 姓名：
+      input(type="text", name="name")
+    p
+      label 邮箱：
+      input(type="text", name="email")
+    p
+      label 网址：
+      input(type="text", name="website", value="http://")
+  p: textarea(name="content", row="5", cols="60")
+  p: input(type="submit", value="留言")

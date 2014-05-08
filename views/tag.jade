@@ -1,0 +1,11 @@
+
+extends layout
+- var lastYear = 0
+block content
+  ul.archive
+    for post in posts
+      if lastYear != post.time.year
+        li: h3 #{post.time.year}
+        - lastYear = post.time.year
+      li: time #{post.time.day}
+      li: a(href="/u/#{post.name}/#{post.time.day}/#{post.title}") #{post.title}

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  form(method="post")
+    p
+      label 标题
+    p
+      input(type="text", name="title", value="#{post.title}", disabled="disabled")
+    p
+      label 标签
+    p
+      if post.tags
+        input(type="text", name="tag1", value="#{post.tags[0]}")
+        input(type="text", name="tag2", value="#{post.tags[1]}")
+        input(type="text", name="tag3", value="#{post.tags[2]}")
+      else
+        input(type="text", name="tag1")
+        input(type="text", name="tag2")
+        input(type="text", name="tag3")
+    p
+      label 正文
+    p
+      textarea(name="post", rows="20", cols="60") #{post.post}
+    p
+      input(type="submit", value="保存修改")
